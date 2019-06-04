@@ -1,11 +1,13 @@
 import React from "react";
 import { Layout, Menu, Icon } from "antd";
 import { Link } from "react-router-dom";
+import { Location } from "history";
+
 const { Header, Sider } = Layout;
 const { SubMenu } = Menu;
 
 interface Iprops {
-  location: any;
+  location: Location;
 }
 
 export const Sidebar: React.FC<Iprops> = props => {

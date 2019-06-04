@@ -6,8 +6,14 @@ import { Row, Col, Layout, Drawer } from "antd";
 import { NavLinkProps } from "react-router-dom";
 import { closeNotificationCenter } from "../actions";
 import { Sidebar } from "../components";
+import styled from "styled-components";
 
 const { Content } = Layout;
+
+const FlexItem = styled(Row)`
+  padding-top: 5px;
+  padding-bottom: 10px;
+`;
 
 interface IProps {
   location?: any;
@@ -42,16 +48,9 @@ class LayoutContainer extends React.PureComponent<IProps, NavLinkProps> {
         <Sidebar location={this.props.location} />
         <Layout>
           <Content style={{ backgroundColor: "#fff" }}>
-            <Row
-              type="flex"
-              align="middle"
-              style={{
-                paddingTop: 5,
-                paddingBottom: 10
-              }}
-            >
+            <FlexItem type="flex" align="middle">
               <Col style={{ flex: 1 }}>{this.props.children}</Col>
-            </Row>
+            </FlexItem>
           </Content>
         </Layout>
       </Layout>
