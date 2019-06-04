@@ -116,6 +116,7 @@ function* watchRequestShopList() {
     const action = take(getType(Actions.requestShopList));
     try {
       const resp = yield call(Api.fetchShops);
+      yield put(Actions.requestShopList({ rows: resp.rows }));
       // console.log(resp);
     } catch (e) {
       if (e instanceof Api.ApiError) {

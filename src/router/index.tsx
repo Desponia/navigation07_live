@@ -26,6 +26,7 @@ const Router: React.FC<IProps> = () => {
           <Switch>
             <PrivateRoute exact path="/" page={Pages.Dashboard} />
             <PrivateRoute exact path="/orders" page={Pages.Order} />
+            <PrivateRoute exact path="/shops" page={Pages.Shop} />
             <Route component={Pages.PageNotFound} />
           </Switch>
         </DefaultLayout>

@@ -9,3 +9,4 @@ export * from "./PageHeader";
 export * from "./OrderList";
 export * from "./Login";
 export * from "./Sidebar";
+export * from "./ShopList";

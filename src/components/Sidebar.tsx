@@ -49,6 +49,12 @@ export const Sidebar: React.FC<Iprops> = props => {
           </Link>
         </Menu.Item>
 
+        <Menu.Item key="/shops">
+          <Link to="/shops">
+            <Icon type="sketch" />
+            가게 목록
+          </Link>
+        </Menu.Item>
         <SubMenu
           key="orders"
           title={
