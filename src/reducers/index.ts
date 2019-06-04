@@ -5,6 +5,7 @@ import * as Actions from "../actions";
 export const initializeState: IStoreState = {
   authentication: null,
   monitoring: false,
+  shopList: [],
   openNotificationCenter: false,
   showTimeline: false,
   duration: 200,
@@ -20,6 +21,11 @@ export default (
   action: ActionType<typeof Actions>
 ) => {
   switch (action.type) {
+    case getType(Actions.requestShopList):
+      return {
+        ...state,
+        shopList: action.payload.rows
+      };
     case getType(Actions.successLogin):
       return {
         ...state,

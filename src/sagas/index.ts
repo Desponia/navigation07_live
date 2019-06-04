@@ -111,8 +111,25 @@ function* watchFetchOrderTimeline() {
   yield takeLatest(getType(Actions.showOrderTimelineChart), fetchOrderTimeline);
 }
 
+function* watchRequestShopList() {
+  while (true) {
+    const action = take(getType(Actions.requestShopList));
+    try {
+      const resp = yield call(Api.fetchShops);
+      // console.log(resp);
+    } catch (e) {
+      if (e instanceof Api.ApiError) {
+        yield put(Actions.addNotification("error", e.errorMessage));
+      } else {
+        console.error(e);
+      }
+    }
+  }
+}
+
 export default function*() {
   yield fork(monitoringWorkflow);
   yield fork(authenticationWorkflow);
   yield fork(watchFetchOrderTimeline);
+  yield fork(watchRequestShopList);
 }

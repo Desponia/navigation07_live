@@ -13,6 +13,10 @@ interface Config {
       timeline(date: string): string;
     };
   };
+
+  shops: {
+    list(): string;
+  };
 }
 
 // process.env.production 분기!!
@@ -29,6 +33,9 @@ const config: Config = {
       failure: () => `${SERVER}/${API_PREFIX}/orders/request/failure`,
       timeline: date => `${SERVER}/${API_PREFIX}/orders/request/all/${date}`
     }
+  },
+  shops: {
+    list: () => `${SERVER}/${API_PREFIX}/shops`
   }
 };
 

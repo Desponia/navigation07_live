@@ -17,9 +17,22 @@ export interface IAuthentication {
   token: string;
 }
 
+export interface IShop {
+  id: number;
+  shopName: string;
+  ownerName: string;
+  coupon: string;
+  category: string;
+  geolocation: [];
+  phone: string;
+  createDate: string;
+  address: string;
+}
+
 export interface IStoreState {
   authentication: IAuthentication | null;
   monitoring: boolean;
+  shopList: IShop[];
   openNotificationCenter: boolean;
   showTimeline: boolean;
   duration: number;

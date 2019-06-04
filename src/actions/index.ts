@@ -93,3 +93,7 @@ export const updateOrderTimeline = createAction(
     return (success: [], failure: []) => resolve({ success, failure });
   }
 );
+
+export const requestShopList = createAction("@request/shop/list", resolve => {
+  return resp => resolve(resp);
+});
